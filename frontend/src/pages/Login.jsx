@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
 import { FaSignInAlt } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { login, reset } from '../features/auth/authSlice'
 import Spinner from '../components/Spinner'
+
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -57,7 +58,54 @@ function Login() {
 
   return (
     <>
-      <section className='heading'>
+
+<div className="login_container">
+			<div className="login_form_container">
+				<div className="login_left">
+        <form onSubmit={onSubmit}>
+          <h1>Login to Your Account</h1>
+          <div className='form-group'>
+            <input
+              type='email'
+              className='form-control'
+              id='email'
+              name='email'
+              value={email}
+              placeholder='Enter your email'
+              onChange={onChange}
+            />
+          </div>
+          <div className='form-group'>
+            <input
+              type='password'
+              className='form-control'
+              id='password'
+              name='password'
+              value={password}
+              placeholder='Enter password'
+              onChange={onChange}
+            />
+          </div>
+
+          <div className='form-group'>
+            <button type='submit' className='btn btn-block'>
+              Submit
+            </button>
+          </div>
+        </form>
+				</div>
+				<div className="login_right">
+					<h1>New Here ?</h1>
+					<Link to="/register">
+						<button type="button" className="white_btn">
+							Sign Up
+						</button>
+					</Link>
+				</div>
+			</div>
+		</div>
+
+      {/* <section className='heading'>
         <h1>
           <FaSignInAlt /> Login
         </h1>
@@ -95,7 +143,7 @@ function Login() {
             </button>
           </div>
         </form>
-      </section>
+      </section> */}
     </>
   )
 }
