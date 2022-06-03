@@ -76,6 +76,7 @@ function Register() {
             </Link>
           </div>
           <div className="signup_right">
+          <h1>Create Account</h1>
             <form className="width60" onSubmit={onSubmit}>
               <div className='form-group'>
                 <input
