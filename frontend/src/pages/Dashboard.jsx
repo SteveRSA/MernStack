@@ -6,6 +6,7 @@ import GoalItem from '../components/GoalItem'
 import Spinner from '../components/Spinner'
 import { getGoals, reset } from '../features/goals/goalSlice'
 import Header from '../components/Header'
+import { toast } from 'react-toastify'
 
 function Dashboard() {
   const navigate = useNavigate()
@@ -18,7 +19,7 @@ function Dashboard() {
 
   useEffect(() => {
     if (isError) {
-      console.log(message)
+      toast.error(message)
     }
 
     if (!user) {
@@ -38,7 +39,7 @@ function Dashboard() {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <section className='heading'>
         <h1>Welcome {user && user.name}</h1>
         <p>Goals Dashboard</p>
