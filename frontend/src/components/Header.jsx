@@ -13,35 +13,39 @@ function Header() {
     dispatch(reset())
     navigate('/')
   }
+  
 
   return (
-    <header className='header'>
-      <div className='logo'>
-        <Link to='/'>GoalSetter</Link>
-      </div>
-      <ul>
-        {user ? (
-          <li>
-            <button className='btn' onClick={onLogout}>
-              <FaSignOutAlt /> Logout
-            </button>
-          </li>
-        ) : (
-          <>
+    <div className="headercontainer">
+      <header className='header'>
+        <div className='logo'>
+          <Link to='/'>React App</Link>
+        </div>
+        <ul>
+          {user ? (
             <li>
-              <Link to='/login'>
-                <FaSignInAlt /> Login
-              </Link>
+              <button className='logoutbtn' onClick={onLogout}>
+                <FaSignOutAlt /> Logout
+              </button>
             </li>
-            <li>
-              <Link to='/register'>
-                <FaUser /> Register
-              </Link>
-            </li>
-          </>
-        )}
-      </ul>
-    </header>
+          ) : (
+            <>
+              <li>
+                <Link to='/login'>
+                  <FaSignInAlt /> Login
+                </Link>
+              </li>
+              <li>
+                <Link to='/register'>
+                  <FaUser /> Register
+                </Link>
+              </li>
+            </>
+          )}
+        </ul>
+      </header>
+    </div>
+
   )
 }
 
