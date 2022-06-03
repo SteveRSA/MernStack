@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { FaUser } from 'react-icons/fa'
 import { register, reset } from '../features/auth/authSlice'
@@ -64,7 +64,74 @@ function Register() {
 
   return (
     <>
-      <section className='heading'>
+
+      <div className="signup_container">
+        <div className="signup_form_container">
+          <div className="signup_left">
+            <h1>Welcome Back</h1>
+            <Link to="/login">
+              <button type="button" className="white_btn">
+                Sign in
+              </button>
+            </Link>
+          </div>
+          <div className="signup_right">
+            <form className="width60" onSubmit={onSubmit}>
+              <div className='form-group'>
+                <input
+                  type='text'
+                  className='form-control'
+                  id='name'
+                  name='name'
+                  value={name}
+                  placeholder='Enter your name'
+                  onChange={onChange}
+                />
+              </div>
+              <div className='form-group'>
+                <input
+                  type='email'
+                  className='form-control'
+                  id='email'
+                  name='email'
+                  value={email}
+                  placeholder='Enter your email'
+                  onChange={onChange}
+                />
+              </div>
+              <div className='form-group'>
+                <input
+                  type='password'
+                  className='form-control'
+                  id='password'
+                  name='password'
+                  value={password}
+                  placeholder='Enter password'
+                  onChange={onChange}
+                />
+              </div>
+              <div className='form-group'>
+                <input
+                  type='password'
+                  className='form-control'
+                  id='password2'
+                  name='password2'
+                  value={password2}
+                  placeholder='Confirm password'
+                  onChange={onChange}
+                />
+              </div>
+              <div className='form-group'>
+                <button type='submit' className='btn green_btn_register'>
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      {/* <section className='heading'>
         <h1>
           <FaUser /> Register
         </h1>
@@ -123,7 +190,7 @@ function Register() {
             </button>
           </div>
         </form>
-      </section>
+      </section> */}
     </>
   )
 }
