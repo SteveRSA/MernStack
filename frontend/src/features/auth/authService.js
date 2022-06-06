@@ -8,7 +8,7 @@ const register = async (userData) => {
 
   if (response.data) {
     localStorage.setItem('user', JSON.stringify(response.data))
-    setTimeout(logout, 3600000);
+    setTimeout(logout, 3500000);
   }
 
   return response.data
@@ -20,7 +20,7 @@ const login = async (userData) => {
 
   if (response.data) {
     localStorage.setItem('user', JSON.stringify(response.data))
-    setTimeout(logout, 3600000);
+    setTimeout(logout, 3500000);
   }
 
   return response.data
