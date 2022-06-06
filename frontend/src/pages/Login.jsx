@@ -8,104 +8,104 @@ import Spinner from '../components/Spinner'
 
 
 function Login() {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-  })
+    const [formData, setFormData] = useState({
+        email: '',
+        password: '',
+    })
 
-  const { email, password } = formData
+    const { email, password } = formData
 
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
 
-  const { user, isLoading, isError, isSuccess, message } = useSelector(
-    (state) => state.auth
-  )
+    const { user, isLoading, isError, isSuccess, message } = useSelector(
+        (state) => state.auth
+    )
 
-  useEffect(() => {
-    if (isError) {
-      toast.error(message)
+    useEffect(() => {
+        if (isError) {
+            toast.error(message)
+        }
+
+        if (isSuccess || user) {
+            navigate('/')
+        }
+
+        dispatch(reset())
+    }, [user, isError, isSuccess, message, navigate, dispatch])
+
+    const onChange = (e) => {
+        setFormData((prevState) => ({
+            ...prevState,
+            [e.target.name]: e.target.value,
+        }))
     }
 
-    if (isSuccess || user) {
-      navigate('/')
+    const onSubmit = (e) => {
+        e.preventDefault()
+
+        const userData = {
+            email,
+            password,
+        }
+
+        dispatch(login(userData))
     }
 
-    dispatch(reset())
-  }, [user, isError, isSuccess, message, navigate, dispatch])
-
-  const onChange = (e) => {
-    setFormData((prevState) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }))
-  }
-
-  const onSubmit = (e) => {
-    e.preventDefault()
-
-    const userData = {
-      email,
-      password,
+    if (isLoading) {
+        return <Spinner />
     }
 
-    dispatch(login(userData))
-  }
+    return (
+        <>
 
-  if (isLoading) {
-    return <Spinner />
-  }
+            <div className="login_container">
+                <div className="login_form_container">
+                    <div className="login_left">
+                        <form onSubmit={onSubmit}>
+                            <h1>Login to Your Account</h1>
+                            <div className='form-group'>
+                                <input
+                                    type='email'
+                                    className='form-control'
+                                    id='email'
+                                    name='email'
+                                    value={email}
+                                    placeholder='Enter your email'
+                                    onChange={onChange}
+                                />
+                            </div>
+                            <div className='form-group'>
+                                <input
+                                    type='password'
+                                    className='form-control'
+                                    id='password'
+                                    name='password'
+                                    value={password}
+                                    placeholder='Enter password'
+                                    onChange={onChange}
+                                />
+                            </div>
 
-  return (
-    <>
+                            <div className='form-group'>
+                                <button type='submit' className='btn btn-block'>
+                                    Submit
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div className="login_right">
+                        <h1>New Here ?</h1>
+                        <Link to="/register">
+                            <button type="button" className="white_btn">
+                                Sign Up
+                            </button>
+                        </Link>
+                    </div>
+                </div>
+            </div>
 
-<div className="login_container">
-			<div className="login_form_container">
-				<div className="login_left">
-        <form onSubmit={onSubmit}>
-          <h1>Login to Your Account</h1>
-          <div className='form-group'>
-            <input
-              type='email'
-              className='form-control'
-              id='email'
-              name='email'
-              value={email}
-              placeholder='Enter your email'
-              onChange={onChange}
-            />
-          </div>
-          <div className='form-group'>
-            <input
-              type='password'
-              className='form-control'
-              id='password'
-              name='password'
-              value={password}
-              placeholder='Enter password'
-              onChange={onChange}
-            />
-          </div>
-
-          <div className='form-group'>
-            <button type='submit' className='btn btn-block'>
-              Submit
-            </button>
-          </div>
-        </form>
-				</div>
-				<div className="login_right">
-					<h1>New Here ?</h1>
-					<Link to="/register">
-						<button type="button" className="white_btn">
-							Sign Up
-						</button>
-					</Link>
-				</div>
-			</div>
-		</div>
-
-      {/* <section className='heading'>
+            {/* <section className='heading'>
         <h1>
           <FaSignInAlt /> Login
         </h1>
@@ -144,8 +144,8 @@ function Login() {
           </div>
         </form>
       </section> */}
-    </>
-  )
+        </>
+    )
 }
 
 export default Login

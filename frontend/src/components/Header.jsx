@@ -16,7 +16,7 @@ function Header() {
   
 
   return (
-    <div className="headercontainer">
+    <div className="headercontainer"> 
       <header className='header'>
         <div className='logo'>
           <Link to='/'>React App</Link>

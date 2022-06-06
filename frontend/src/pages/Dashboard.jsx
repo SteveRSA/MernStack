@@ -39,15 +39,17 @@ function Dashboard() {
 
   return (
     <>
-      {/* <Header /> */}
-      <section className='heading'>
+      <Header />
+      <section className='heading container'>
         <h1>Welcome {user && user.name}</h1>
         <p>Goals Dashboard</p>
       </section>
 
-      <GoalForm />
+      <section className='container'>
+        <GoalForm />
+      </section>
 
-      <section className='content'>
+      <section className='content container'>
         {goals.length > 0 ? (
           <div className='goals'>
             {goals.map((goal) => (
