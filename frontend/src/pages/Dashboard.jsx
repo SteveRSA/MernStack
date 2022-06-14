@@ -23,8 +23,7 @@ function Dashboard() {
     }
 
     if (!user) {
-        navigate('/login')
-        return
+      navigate('/login')
     }
 
     dispatch(getGoals())
