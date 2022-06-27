@@ -22,9 +22,10 @@ function Dashboard() {
             toast.error(message)
         }
 
-        if (!user) {
-            navigate('/login')
-        }
+    if (!user) {
+        navigate('/login')
+        return
+    }
 
         dispatch(getGoals())
 
