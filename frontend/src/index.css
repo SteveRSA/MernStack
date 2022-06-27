@@ -452,3 +452,38 @@ h3 {
 .width60 {
     width: 60%;
 }
+
+.goal-text-wrapper,
+.goal-edit-form {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.goal-text {
+    margin-bottom: 0;
+}
+
+.goal-edit-icon,
+.goal-save-icon,
+.goal-skip-save-icon {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.goal-edit-form .form-group,
+.goal-edit-form input {
+    margin-bottom: 0;
+    width: 200px;
+}
+
+.goal-edit-icon {
+    margin-left: 10px;
+}
+
+.goal-save-icon {
+    margin: 0 10px;
+}
