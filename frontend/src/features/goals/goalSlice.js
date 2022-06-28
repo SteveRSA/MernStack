@@ -87,7 +87,7 @@ export const goalSlice = createSlice({
             .addCase(getGoals.rejected, (state, action) => {
                 state.isLoading = false
                 state.isError = true
-                state.message = action.payload
+                state.message = action.payload 
             })
             .addCase(deleteGoal.pending, state => {
                 state.isLoading = true
