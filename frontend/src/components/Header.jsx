@@ -20,6 +20,8 @@ function Header() {
             <header className='header'>
                 <div className='logo'>
                     <Link to='/'>React App</Link>
+                    <span className='headerDivider'></span>
+                    <Link to='/'>Goes Nowhere</Link>
                 </div>
                 <ul>
                     {user ? (

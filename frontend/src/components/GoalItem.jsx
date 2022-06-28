@@ -21,7 +21,7 @@ const GoalItem = ({ goal }) => {
 
     return (
         <div className='goal'>
-            <div>{new Date(goal.updatedAt).toLocaleString('en-US')}</div>
+            <div className='text14'>{new Date(goal.updatedAt).toLocaleString('en-US')}</div>
             {showEditForm ? (
                 <form className='goal-edit-form' onSubmit={e => e.preventDefault()}>
                     <div className='form-group'>
@@ -35,17 +35,17 @@ const GoalItem = ({ goal }) => {
                         />
                     </div>
                     <button type='button' className='goal-save-icon' onClick={onUpdateGoal}>
-                        <FaSave size={25} />
+                        <FaSave size={15} />
                     </button>
                     <button type='button' className='goal-skip-save-icon' onClick={() => setShowEditForm(prevState => !prevState)}>
-                        <FaTimesCircle size={25} />
+                        <FaTimesCircle size={15} />
                     </button>
                 </form>
             ) : (
                 <div className='goal-text-wrapper'>
                     <h2 className='goal-text'>{goal.text}</h2>
                     <button className='goal-edit-icon' onClick={() => setShowEditForm(prevState => !prevState)}>
-                        <FaEdit size={25} />
+                        <FaEdit size={15} />
                     </button>
                 </div>
             )}
