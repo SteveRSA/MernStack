@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { register, reset } from '../features/auth/authSlice'
 import Spinner from '../components/Spinner'
+import { FaLock } from 'react-icons/fa'
+
 
 function Register() {
     const [formData, setFormData] = useState({
@@ -70,7 +72,8 @@ function Register() {
                         <h1>Welcome Back</h1>
                         <Link to="/login">
                             <button type="button" className="white_btn">
-                                Sign in
+                                Sign in  
+                                <FaLock className="pb-1"/>
                             </button>
                         </Link>
                     </div>
@@ -122,7 +125,7 @@ function Register() {
                                 />
                             </div>
                             <div className='form-group'>
-                                <button type='submit' className='btn green_btn_register'>
+                                <button type='submit' className='btn green_btn'>
                                     Submit
                                 </button>
                             </div>
@@ -130,67 +133,6 @@ function Register() {
                     </div>
                 </div>
             </div>
-
-            {/* <section className='heading'>
-        <h1>
-          <FaUser /> Register
-        </h1>
-        <p>Please create an account</p>
-      </section>
-
-      <section className='form'>
-        <form onSubmit={onSubmit}>
-          <div className='form-group'>
-            <input
-              type='text'
-              className='form-control'
-              id='name'
-              name='name'
-              value={name}
-              placeholder='Enter your name'
-              onChange={onChange}
-            />
-          </div>
-          <div className='form-group'>
-            <input
-              type='email'
-              className='form-control'
-              id='email'
-              name='email'
-              value={email}
-              placeholder='Enter your email'
-              onChange={onChange}
-            />
-          </div>
-          <div className='form-group'>
-            <input
-              type='password'
-              className='form-control'
-              id='password'
-              name='password'
-              value={password}
-              placeholder='Enter password'
-              onChange={onChange}
-            />
-          </div>
-          <div className='form-group'>
-            <input
-              type='password'
-              className='form-control'
-              id='password2'
-              name='password2'
-              value={password2}
-              placeholder='Confirm password'
-              onChange={onChange}
-            />
-          </div>
-          <div className='form-group'>
-            <button type='submit' className='btn btn-block'>
-              Submit
-            </button>
-          </div>
-        </form>
-      </section> */}
         </>
     )
 }

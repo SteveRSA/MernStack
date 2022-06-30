@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { login, reset } from '../features/auth/authSlice'
 import Spinner from '../components/Spinner'
+import { FaPenFancy } from 'react-icons/fa'
+
 
 
 function Login() {
@@ -87,7 +89,7 @@ function Login() {
                             </div>
 
                             <div className='form-group'>
-                                <button type='submit' className='btn btn-block'>
+                                <button type='submit' className='btn green_btn'>
                                     Submit
                                 </button>
                             </div>
@@ -97,52 +99,13 @@ function Login() {
                         <h1>New Here ?</h1>
                         <Link to="/register">
                             <button type="button" className="white_btn">
-                                Sign Up
+                                Sign Up  
+                                <FaPenFancy className="pb-1" />
                             </button>
                         </Link>
                     </div>
                 </div>
             </div>
-
-            {/* <section className='heading'>
-        <h1>
-          <FaSignInAlt /> Login
-        </h1>
-        <p>Login and start setting goals</p>
-      </section>
-
-      <section className='form'>
-        <form onSubmit={onSubmit}>
-          <div className='form-group'>
-            <input
-              type='email'
-              className='form-control'
-              id='email'
-              name='email'
-              value={email}
-              placeholder='Enter your email'
-              onChange={onChange}
-            />
-          </div>
-          <div className='form-group'>
-            <input
-              type='password'
-              className='form-control'
-              id='password'
-              name='password'
-              value={password}
-              placeholder='Enter password'
-              onChange={onChange}
-            />
-          </div>
-
-          <div className='form-group'>
-            <button type='submit' className='btn btn-block'>
-              Submit
-            </button>
-          </div>
-        </form>
-      </section> */}
         </>
     )
 }
