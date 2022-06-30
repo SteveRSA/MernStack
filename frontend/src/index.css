@@ -12,8 +12,8 @@ body {
 }
 
 a {
-    text-decoration: none;
-    color: #000;
+    text-decoration: none !important; 
+    color: #000 !important;
 }
 
 p {
@@ -343,7 +343,7 @@ h3 {
 .green_btn {
     background-color: #3bb19b;
     color: white;
-    margin: 10px;
+    /*margin: 10px;*/
 }
 
 .bgcustomgreen {
@@ -447,11 +447,10 @@ h3 {
     cursor: pointer;
 }
 
-.green_btn_register {
-    background-color: #3bb19b;
-    color: white;
-    /* margin: 10px; */
-    width: 100%;
+.green_btn {
+    background-color: #3bb19b !important;
+    color: white !important;
+    width: 100% !important;
 }
 
 .width60 {

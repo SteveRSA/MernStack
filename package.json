@@ -22,9 +22,10 @@
     "express-async-handler": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.5",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "server": "^1.0.37"
   },
   "devDependencies": {
-    "concurrently": "^7.2.1"
+    "concurrently": "^7.2.2"
   }
 }
